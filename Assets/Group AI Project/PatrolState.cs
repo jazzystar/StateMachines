@@ -11,7 +11,11 @@ public class PatrolState : State {
     {
         if (stateController.CheckIfInRange("Player"))
         {
-            stateController.SetState(new ChaseState(stateController));
+            if (Random.value < .5)
+            {
+                stateController.SetState(new ChaseState(stateController));
+            }
+            else stateController.SetState(new CryState(stateController));
         }
         
     }

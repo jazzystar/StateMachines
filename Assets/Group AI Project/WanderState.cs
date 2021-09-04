@@ -18,7 +18,14 @@ public class WanderState : State
         }
         if (timer > timeLimit)
         {
-            stateController.SetState(new MakeNavPoints(stateController));
+            if (Random.value < .5)
+            {
+                stateController.SetState(new MakeNavPoints(stateController));
+            }
+            else
+            {
+                stateController.SetState(new CryState(stateController));
+            }
         }
 
     }
