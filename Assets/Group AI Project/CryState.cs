@@ -34,11 +34,11 @@ public class CryState : State
     public override void OnStateEnter()
     {
         cryTimer = 0f;
-        cryTimeLimit = 5f;
+        cryTimeLimit = 3f;
         Debug.Log("I am sad.");
         if (stateController.ai.agent != null)
         {
-            stateController.ai.agent.speed = .1f;
+            stateController.ai.agent.speed = 0f;
         }
         stateController.ChangeColor(Color.grey);
     }
