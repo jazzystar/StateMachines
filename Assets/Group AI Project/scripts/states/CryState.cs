@@ -10,16 +10,27 @@ public class CryState : State
 
     float cryTimeLimit;
     float cryTimer;
+    
     public override void CheckTransitions()
     {
+        if (stateController.cryCounter > 2)
+        {
+            stateController.ai.isCrying = false;
+            stateController.SetState(new SuicideState(stateController));
+        }
         if (stateController.CheckIfInRange("Player"))
         {
+            stateController.ai.isCrying = false;
             stateController.SetState(new ChaseState(stateController));
         }
         if (cryTimer > cryTimeLimit)
         {
-            stateController.SetState(new MakeNavPoints(stateController));
+            stateController.ai.isCrying = false;
+            stateController.SetState(new WanderState(stateController));
         }
+
+        Debug.Log(stateController.cryCounter);
+
 
     }
     public override void Act()
@@ -30,16 +41,25 @@ public class CryState : State
             stateController.destination = stateController.GetWanderPoint();
             stateController.ai.SetTarget(stateController.destination);
         }
+
+        if (cryTimer > cryTimeLimit)
+        {
+            stateController.ai.isCrying = false;
+        }
     }
     public override void OnStateEnter()
     {
         cryTimer = 0f;
         cryTimeLimit = 3f;
+        stateController.cryCounter++;
         Debug.Log("I am sad.");
-        if (stateController.ai.agent != null)
+       if (stateController.ai.agent != null)
         {
             stateController.ai.agent.speed = 0f;
+            stateController.ChangeColor(Color.grey);
+            stateController.ai.isCrying = true;
+            Debug.Log("I should be crying");
         }
-        stateController.ChangeColor(Color.grey);
+        
     }
 }

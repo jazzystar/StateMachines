@@ -10,7 +10,7 @@ public class ChaseState : State {
     {
         if (!stateController.CheckIfInRange("Player"))
         {
-            stateController.SetState(new WanderState(stateController));
+            stateController.SetState(new CryState(stateController));
         }
     }
     public override void Act()

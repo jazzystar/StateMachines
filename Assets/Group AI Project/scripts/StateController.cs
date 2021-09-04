@@ -18,7 +18,7 @@ public class StateController : MonoBehaviour {
     public float detectionRange = 5;
     public GameObject wanderP;
     public GameObject newNavPoint;
-
+    public int cryCounter =0;
 
     void Start()
     {
@@ -102,4 +102,6 @@ public class StateController : MonoBehaviour {
             currentState.OnStateEnter();
         }
     }
+
+   
 }
