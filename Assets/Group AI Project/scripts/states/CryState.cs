@@ -16,7 +16,7 @@ public class CryState : State
         if (stateController.cryCounter > 2)
         {
             stateController.ai.isCrying = false;
-            stateController.SetState(new SuicideState(stateController));
+            stateController.SetState(new ReflectOnLifeAtEdgeState(stateController));
         }
         if (stateController.CheckIfInRange("Player"))
         {

@@ -19,6 +19,8 @@ public class StateController : MonoBehaviour {
     public GameObject wanderP;
     public GameObject newNavPoint;
     public int cryCounter =0;
+    public Transform ReflectOnLifeAtEdgeSpace;
+    public GameObject reflectOnLife;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class StateController : MonoBehaviour {
         ai = GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>();
         childrenRend = GetComponentsInChildren<Renderer>();
         SetState(new PatrolState(this));
+        
     }
 
     void Update()
