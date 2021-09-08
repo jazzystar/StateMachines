@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Group AI Project/basic_state_machine_ai.unity
+- path: Assets/Group AI Project/Dan's States/basic_state_machine_ai.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

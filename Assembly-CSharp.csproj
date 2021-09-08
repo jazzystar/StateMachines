@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D2FFE4B6-F906-3C99-AB1F-D487FFBFF5B3}</ProjectGuid>
+    <ProjectGuid>{AA76EE14-F492-6C43-E7AA-4155A4CF58E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,18 +53,13 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Group AI Project\WanderState.cs" />
-    <Compile Include="Assets\Group AI Project\MakeNavPoints.cs" />
-    <Compile Include="Assets\Group AI Project\StateController.cs" />
-    <Compile Include="Assets\Group AI Project\ChaseState.cs" />
-    <Compile Include="Assets\Group AI Project\PatrolState.cs" />
-    <Compile Include="Assets\Group AI Project\State.cs" />
-    <Compile Include="Assets\Group AI Project\StormCloaks Scripts\StormCloaksStateController.cs" />
-    <Compile Include="Assets\Group AI Project\StormCloaks Scripts\StormCloaksState.cs" />
-    <Compile Include="Assets\Group AI Project\StormCloaks Scripts\StormCloaksWanderState.cs" />
-    <Compile Include="Assets\Group AI Project\StormCloaks Scripts\StormCloaksMakeNavPoints.cs" />
-    <Compile Include="Assets\Group AI Project\StormCloaks Scripts\StormCloaksChaseState.cs" />
-    <Compile Include="Assets\Group AI Project\StormCloaks Scripts\StormCloaksPatrolState.cs" />
+    <Compile Include="Assets\Group AI Project\Dan&apos;s States\WanderState.cs" />
+    <Compile Include="Assets\Group AI Project\Dan&apos;s States\MakeNavPoints.cs" />
+    <Compile Include="Assets\Group AI Project\Dan&apos;s States\StateController.cs" />
+    <Compile Include="Assets\SImpleStateMachine.cs" />
+    <Compile Include="Assets\Group AI Project\Dan&apos;s States\ChaseState.cs" />
+    <Compile Include="Assets\Group AI Project\Dan&apos;s States\PatrolState.cs" />
+    <Compile Include="Assets\Group AI Project\Dan&apos;s States\State.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -640,6 +635,9 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -655,6 +653,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -664,13 +665,10 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{B3597E13-C769-5E76-C5E3-AD9A0B4ECDE3}</Project>
+      <Project>{A82D973E-064C-A392-8E8C-6C6A3A6D2F5F}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
