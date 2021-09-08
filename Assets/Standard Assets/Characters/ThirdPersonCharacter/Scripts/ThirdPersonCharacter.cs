@@ -30,6 +30,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 
 
+
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
@@ -42,7 +43,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
-
+		public void Cry(bool isCrying)
+		{
+			m_Animator.SetBool("IsCrying", isCrying);
+		}
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
 
@@ -122,6 +126,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
+			
+
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);

@@ -13,6 +13,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool jump;
         private bool crounching;
 
+
+        public bool isCrying = false;
         private void Start()
         {
             //get the components on the object we need ( should not be null due to require component so no need to check )
@@ -40,6 +42,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             else
                 character.Move(Vector3.zero, false, false);
+            
+            if (isCrying)
+                character.Cry(true);
+            else
+                character.Cry(false);
+            
         }
         public bool DestinationReached()
         {
