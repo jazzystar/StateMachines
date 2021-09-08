@@ -10,7 +10,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public UnityEngine.AI.NavMeshAgent agent { get; private set; } // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
         public Transform target;                                    // target to aim for
-
+        private bool jump;
+        private bool crounching;
 
         private void Start()
         {
@@ -28,7 +29,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 agent.SetDestination(target.position);
 
             if (!DestinationReached())
-                character.Move(agent.desiredVelocity, false, false);
+            {
+                if (!jump && !crounching)
+                    character.Move(agent.desiredVelocity, false, false);
+                else if(jump && !crounching)
+                    character.Move(agent.desiredVelocity, false, true);
+                else if(!jump && crounching)
+                    character.Move(agent.desiredVelocity, true, false);
+
+            }
             else
                 character.Move(Vector3.zero, false, false);
         }
@@ -40,6 +49,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public void SetTarget(Transform target)
         {
             this.target = target;
+            jump = false;
+            crounching = false;
+        }
+
+        public void SetTarget(Transform target, bool jump)
+        {
+            this.target = target;
+            this.jump = jump;
+            crounching = false;
+        }
+
+        public void SetTarget(Transform target, bool jump, bool crounching)
+        {
+            this.target = target;
+            this.jump = jump;
+            this.crounching = crounching;
         }
     }
 }
