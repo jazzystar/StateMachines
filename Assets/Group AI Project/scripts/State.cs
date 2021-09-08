@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class State {
 
-    protected StateController stateController;
+    protected GameBabyStateController stateController;
     //constructor
-    public State(StateController stateController)
+    public State(GameBabyStateController stateController)
     {
         this.stateController = stateController;
     }

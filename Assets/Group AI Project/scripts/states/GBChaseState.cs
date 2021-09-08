@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseState : State {
+public class GBChaseState : State {
 
-    public ChaseState(StateController stateController) : base(stateController) { }
+    public GBChaseState(GameBabyStateController stateController) : base(stateController) { }
 
     public override void CheckTransitions()
     {
         if (!stateController.CheckIfInRange("Player"))
         {
-            stateController.SetState(new CryState(stateController));
+            stateController.SetState(new GBCryState(stateController));
         }
     }
     public override void Act()

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WanderState : State
+public class GBWanderState : State
 {
 
 
-    public WanderState(StateController stateController) : base(stateController) { }
+    public GBWanderState(GameBabyStateController stateController) : base(stateController) { }
 
     float timeLimit;
     float timer;
@@ -14,17 +14,17 @@ public class WanderState : State
     {
         if (stateController.CheckIfInRange("Player"))
         {
-            stateController.SetState(new ChaseState(stateController));
+            stateController.SetState(new GBChaseState(stateController));
         }
         if (timer > timeLimit)
         {
             if (Random.value < .5)
             {
-                stateController.SetState(new MakeNavPoints(stateController));
+                stateController.SetState(new GBMakeNavPoints(stateController));
             }
             else
             {
-                stateController.SetState(new CryState(stateController));
+                stateController.SetState(new GBCryState(stateController));
             }
         }
 

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CryState : State
+public class GBCryState : State
 {
 
 
-    public CryState(StateController stateController) : base(stateController) { }
+    public GBCryState(GameBabyStateController stateController) : base(stateController) { }
 
     float cryTimeLimit;
     float cryTimer;
@@ -21,12 +21,12 @@ public class CryState : State
         if (stateController.CheckIfInRange("Player"))
         {
             stateController.ai.isCrying = false;
-            stateController.SetState(new ChaseState(stateController));
+            stateController.SetState(new GBChaseState(stateController));
         }
         if (cryTimer > cryTimeLimit)
         {
             stateController.ai.isCrying = false;
-            stateController.SetState(new WanderState(stateController));
+            stateController.SetState(new GBWanderState(stateController));
         }
 
         Debug.Log(stateController.cryCounter);

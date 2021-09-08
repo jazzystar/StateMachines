@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReflectOnLifeAtEdgeState : State
 {
-    public ReflectOnLifeAtEdgeState(StateController stateController) : base(stateController) { }
+    public ReflectOnLifeAtEdgeState(GameBabyStateController stateController) : base(stateController) { }
 
     public override void CheckTransitions()
     {

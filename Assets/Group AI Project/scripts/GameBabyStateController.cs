@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class StateController : MonoBehaviour {
+public class GameBabyStateController : MonoBehaviour {
 
     public GameObject navPointsParent;
     public State currentState;
@@ -27,7 +27,7 @@ public class StateController : MonoBehaviour {
         navPoints = GameObject.FindGameObjectsWithTag("navpoint");
         ai = GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>();
         childrenRend = GetComponentsInChildren<Renderer>();
-        SetState(new PatrolState(this));
+        SetState(new GBPatrolState(this));
         
     }
 
